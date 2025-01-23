@@ -43,11 +43,11 @@ hum_menu.addEventListener('click', () => {
   list.style.display = display;
 });
 
-// window.addEventListener('resize', function() {
-//   if (window.innerWidth < 320) {
-//     window.resizeTo(320, window.innerHeight);
-//   }
-//   if (window.innerHeight < 480) {
-//     window.resizeTo(window.innerWidth, 480);
-//   }
-// });
+window.addEventListener('resize', function() {
+  if (window.innerWidth < 320) {
+    window.resizeTo(320, window.innerHeight);
+  }
+  if (window.innerHeight < 480) {
+    window.resizeTo(window.innerWidth, 480);
+  }
+});

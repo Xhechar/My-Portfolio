@@ -2758,7 +2758,7 @@ input:focus {
   }
 }
 
-@media (max-width: 375px) {
+@media (min-width: 325px) and (max-width: 375px) {
   .my-name-home {
     background-image: linear-gradient(45deg, var(--highlight-color-two), var(--highlight-color-one), var(--highlight-color-two));
     -webkit-text-fill-color: transparent;
@@ -4131,7 +4131,7 @@ input:focus {
   }
 }
 
-@media (max-width: 525px) {
+@media (min-width: 375px) and (max-width: 525px) {
   .my-name-home {
     background-image: linear-gradient(45deg, var(--highlight-color-two), var(--highlight-color-one), var(--highlight-color-two));
     -webkit-text-fill-color: transparent;
@@ -5506,7 +5506,7 @@ input:focus {
   }
 }
 
-@media (max-width: 675px) {
+@media (min-width: 525px) and (max-width: 675px) {
   .my-name-home {
     background-image: linear-gradient(45deg, var(--highlight-color-two), var(--highlight-color-one), var(--highlight-color-two));
     -webkit-text-fill-color: transparent;

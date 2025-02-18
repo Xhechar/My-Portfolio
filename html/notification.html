@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo/14084229.png" type="image/x-icon">
+    <title>Coming Soon - Live Demos</title>
+    <style>
+        :root {
+            --background-color: hsl(0, 0%, 12%);
+            --text-color: hsl(0, 0%, 87%);
+            --highlight-color-one: hsl(50, 74%, 47%);
+            --highlight-color-two: hsl(1, 100%, 49%);
+            --header-bg: hsla(0, 0%, 10%, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-container {
+            margin-bottom: 2rem;
+        }
+
+        .not-found-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .not-found-image:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight-color-one);
+            animation: colorPulse 3s infinite alternate;
+        }
+
+        @keyframes colorPulse {
+            0% {
+                color: var(--highlight-color-one);
+            }
+            100% {
+                color: var(--highlight-color-two);
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: var(--highlight-color-one);
+            font-weight: bold;
+        }
+
+        .back-button {
+            background: linear-gradient(to right, var(--highlight-color-one), var(--highlight-color-two));
+            color: var(--background-color);
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:active {
+            transform: translateY(1px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .back-button {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 0.9rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="../images/projects/timers.jpg" alt="Coming Soon" class="not-found-image">
+        </div>
+        <h1>My Live Demos Are Getting a Makeover!</h1>
+        <p>
+            <span class="highlight">Exciting news!</span> I am currently fine-tuning the responsiveness of all my live demo projects to ensure they look amazing on all your devices.
+        </p>
+        <p>
+            I am working round the clock to create the perfect experience for you. The demos will be up and running very soon, better than ever before!
+        </p>
+        <p>
+            While you wait, why not check back in a few days? I promise it'll be worth it! <br> Thanks  . . . <br>🚀
+        </p>
+        <a href="javascript:history.back()" class="back-button">
+            Take Me Back
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('h1, p, .back-button');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                el.style.transitionDelay = `${0.2 + index * 0.1}s`;
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

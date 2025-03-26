@@ -399,14 +399,75 @@ ul a:hover {
   height: 2rem;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .career-name h4 {
   font-weight: 800;
-  font-size: 2rem;
-  margin-left: 0%;
+  font-size: clamp(1.25rem, 5vw, 2rem); /* Responsive font size */
+  margin-left: 0;
   letter-spacing: 2px;
   color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Falling letter animation */
+.falling-letter {
+  display: inline-block;
+  animation: fallDown 0.5s ease-in-out forwards;
+}
+
+@keyframes fallDown {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Small devices (mobile phones) */
+@media screen and (max-width: 480px) {
+  .career-name {
+      height: 1.5rem;
+      justify-content: center;
+  }
+
+  .career-name h4 {
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      letter-spacing: 1px;
+      text-align: center;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .career-name {
+      height: 1.75rem;
+      justify-content: center;
+  }
+
+  .career-name h4 {
+      font-size: clamp(1.125rem, 4.5vw, 1.75rem);
+      letter-spacing: 1.5px;
+      text-align: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .career-name {
+      justify-content: flex-start;
+  }
+
+  .career-name h4 {
+      font-size: clamp(1.25rem, 5vw, 2rem);
+      letter-spacing: 2px;
+      text-align: left;
+  }
 }
 
 .skills-description {
